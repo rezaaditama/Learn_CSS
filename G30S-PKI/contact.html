@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G30S-PKI</title>
+    <link rel="icon" href="assets/Banner.jpg" />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: #0e2309;
+        height: 2500px;
+      }
+
+      header,
+      nav,
+      article,
+      main,
+      footer {
+        width: 1000px;
+        margin: auto;
+        box-sizing: border-box;
+      }
+
+      header {
+        height: 200px;
+      }
+
+      img {
+        height: inherit;
+        width: inherit;
+      }
+
+      nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 80px;
+        background-color: rgb(73, 73, 73);
+        overflow: hidden;
+      }
+
+      nav a {
+        color: white;
+        padding: 30px 22px;
+        box-sizing: border-box;
+        font: 20px Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      }
+
+      footer {
+        color: whitesmoke;
+        font: 18px Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        background-color: rgb(73, 73, 73);
+        display: flex;
+        justify-content: center;
+      }
+
+      nav a:hover {
+        color: green;
+        background-color: whitesmoke;
+      }
+
+      form {
+        background-color: rgb(213, 212, 212);
+        padding: 50px;
+      }
+
+      #halo {
+        font-size: 4vh;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        padding: 4px 25px;
+        border-radius: 18%;
+        background-color: rgb(21, 82, 196);
+        color: aliceblue;
+        font-weight: bold;
+      }
+
+      nav a:last-child {
+        color: rgb(255, 255, 255);
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="/assets/Banner.jpg" alt="Patung G30S-PKI" />
+    </header>
+    <nav>
+      <a href="index.html" class="home">Home</a>
+      <a href="article.html">Article</a>
+      <a href="galery.html">Galery</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <main>
+      <form action="send.html" name="daftar" method="post">
+        <h1 id="halo">Hallo</h1>
+        <table border="1" cellspacing="0" width="100%" cellpadding="5">
+          <tr>
+            <td width="50%"><label for="username">Username :</label></td>
+            <td width="50%">
+              <input
+                type="text"
+                id="username"
+                placeholder="Masukkan Username"
+                autocomplete="username"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="password">Password :</label>
+            </td>
+            <td>
+              <input
+                type="password"
+                id="password"
+                placeholder="Masukkan Password"
+                autocomplete="current-password"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="jenisKelamin">Jenis Kelamin :</label></td>
+            <td colspan="2">
+              <input type="radio" name="jenisKelamin" id="pria" />
+              <label for="pria">Pria</label>
+              <input type="radio" name="jenisKelamin" id="wanita" />
+              <label for="wanita">Wanita</label>
+            </td>
+          </tr>
+          <tr>
+            <td>Pendidikan terakhir :</td>
+            <td>
+              <input type="checkbox" id="sd" />
+              <label for="sd">SD</label>
+              <input type="checkbox" id="smp" />
+              <label for="smp">SMP</label>
+              <input type="checkbox" id="sma" />
+              <label for="sma">SMA</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="alamat">Alamat :</label>
+            </td>
+            <td>
+              <select name="alamat" id="alamat">
+                <option value="jawabarat">Jawa Barat</option>
+                <option value="jawatengah">Jawa Tengah</option>
+                <option value="jawatimur">Jawa Timur</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="comment">Komentar :</label></td>
+            <td>
+              <textarea name="comment" id="comment"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <button type="submit">Submit</button>
+              <button type="reset">
+                <a href="" onclick="reset()">Reset</a>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </main>
+    <footer>
+      <p>Copyright by Reza Aditama</p>
+    </footer>
+  </body>
+  <script>
+    let halo = document.querySelector('#halo');
+    let nama = localStorage.getItem('nama');
+    if (!nama) {
+      nama = prompt('Masukkan Nama');
+      localStorage.setItem('nama', nama);
+    }
+
+    halo.innerHTML = `Halo, ${nama}`;
+
+    const reset = () => {
+      localStorage.removeItem('nama');
+    };
+  </script>
+</html>
