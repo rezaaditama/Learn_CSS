@@ -1,2 +1,2 @@
 # Learn_CSS
-Learn CSS Basic, CSS Layout and CSS3
+practice creating a website using CSS Basic, CSS Layout and CSS3
