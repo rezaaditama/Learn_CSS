@@ -1,0 +1,105 @@
+body {
+  background-color: antiquewhite;
+}
+
+header,
+nav,
+figure,
+main,
+footer {
+  width: 174vh;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+header {
+  height: 11vh;
+  background-color: darkgreen;
+  display: flex;
+  align-items: center;
+  color: whitesmoke;
+  padding: 5vh;
+}
+
+nav {
+  background-color: darkgreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  text-decoration: none;
+  color: whitesmoke;
+  margin: 4vh;
+  font: bold 3.2vh Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+nav a:hover {
+  color: skyblue;
+}
+
+figure img {
+  width: inherit;
+  height: 55vh;
+}
+
+main {
+  background-color: rgb(129, 216, 123);
+  margin-top: -10px;
+  padding: 5vh;
+}
+
+article,
+aside {
+  box-sizing: border-box;
+}
+
+article {
+  width: 45%;
+  padding: 10px;
+  float: left;
+}
+
+article h3 {
+  font: bold 4.5vh Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+article p {
+  text-indent: 10%;
+  text-align: justify;
+  font: 2.8vh Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+aside {
+  width: 40%;
+  text-align: justify;
+  padding: 5px 10px;
+  float: right;
+}
+
+aside img {
+  width: 20vh;
+  float: left;
+  padding-right: 2.5vh;
+}
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+footer {
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  text-align: center;
+  background-color: darkgreen;
+  font: bold 3vh Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
