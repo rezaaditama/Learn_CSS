@@ -1,0 +1,112 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3vw;
+  height: 13vh;
+  background-color: #f151ff;
+}
+
+.logo h1 {
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 0.4em;
+  color: #fcdcff;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  text-decoration: none;
+  font: bold 0.9em 'Montserrat', sans-serif;
+  color: #f1c2f6;
+}
+
+.hamburger-bar {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.hamburger-bar span {
+  width: 28px;
+  height: 3px;
+  display: block;
+  background-color: #f1c2f6;
+  transition: all 0.5s;
+}
+
+.hamburger-bar input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -0.5vw;
+  top: -0.6vw;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* Animasi Toogle  */
+.hamburger-bar span:last-child {
+  transform-origin: 0 100%;
+}
+
+.hamburger-bar span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.hamburger-bar input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.hamburger-bar input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.hamburger-bar input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+}
+
+/* Responsive */
+@media screen and (max-width: 577px) {
+  .hamburger-bar {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: #ee74f9;
+    align-items: center;
+    z-index: -2;
+    transform: translateX(100%);
+    transition: all 1s;
+  }
+
+  .slide {
+    transform: translate(0);
+    animation: all 0.5s;
+  }
+}
